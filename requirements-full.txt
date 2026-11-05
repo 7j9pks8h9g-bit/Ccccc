@@ -1,0 +1,4 @@
+-r requirements.txt
+chromadb>=0.5,<0.5.20
+sentence-transformers
+hmmlearn

@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: btc5min
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: TRADING_MODE
+        value: offline_sim
+      - key: BTC5MIN_HOST
+        value: 0.0.0.0
+      - key: BTC5MIN_DB_PATH
+        value: /tmp/btc5min.db
+      - key: ENABLE_EXPLORE_OVERRIDE
+        value: "false"
+      - key: DEEPSEEK_API_KEY
+        sync: false
